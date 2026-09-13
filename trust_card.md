@@ -1,5 +1,7 @@
 # Trust Card: 30-Day Unplanned Hospital Readmission Risk Model
 
+> Historical v4 document, retained for provenance. The September 13 refinement audit found subgroup counts that do not match the supplied data and unsupported claims about fairness, validation independence, and clinical readiness. Do not submit this historical card as current evidence. The corrected, artifact-derived card is generated in the selected run directory as `TRUST_CARD.md`; see `README.md` for the workflow.
+
 This Trust Card provides a standardized, transparent audit of the machine learning model developed for the **ML Nexus 2026 Hospital Readmission Challenge**, fulfilling all requirements specified in `consideration.md`.
 
 ---

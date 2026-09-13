@@ -1,5 +1,7 @@
 # ML Nexus 2026 - 30-Day Hospital Readmission Challenge
 
+> September 13, 2026 audit note: this is the historical development log, not an independently verified evaluation report. The supplied test set has 3,000 rows. v6 global feature selection contaminates its reported validation; its training target encoding is not cross-fitted. Several blends are evaluated on their optimization data. The previous subgroup counts and clinical conclusions require regeneration. Follow `README.md` and the selected run's generated evidence for the refinement campaign.
+
 ## 1. Problem Overview
 - **Objective:** Predict unplanned 30-day hospital readmission (`readmitted_30d`) from electronic health record (EHR) features.
 - **Primary Metric:** Binary Log Loss (lower is better).
