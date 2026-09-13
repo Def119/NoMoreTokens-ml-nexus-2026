@@ -114,19 +114,34 @@ def run(base,out,deadline='2026-09-13T18:45:00+05:30'):
     assert torch.cuda.is_available(), 'CUDA-enabled PyTorch required'
     logger('TabM device='+torch.cuda.get_device_name(0)+'; weights randomly initialized; no pretraining')
     source=json.loads((base/'manifest.json').read_text());summary=json.loads((base/'summary.json').read_text())
+    assert summary.get('complete') and not source.get('smoke'), 'A complete full-data base run is required'
+    for filename,expected in source['data'].items():
+        assert digest(filename)==expected, f'Current data differs from base run: {filename}'
+    for filename in ['features.py','models.py','ensemble.py']:
+        assert digest(Path(__file__).parent/filename)==source['code'][filename], f'Base model source changed: {filename}'
+    dependencies=[base/'summary.json',base/'folds.csv']
+    for f,fold in enumerate(summary['folds']):
+        dependencies.append(base/'models'/f'fold_{f}.joblib')
+        for name in fold['chosen'].values():
+            dependencies.extend(base/'cache'/f'o{f}_{name}_i{j}.npz' for j in range(source['inner_folds']))
     candidates=[dict(name='tabm_plain',family='tabm',mode='raw',params=dict(embeddings=False,dropout=.15,weight_decay=.01)),
                 dict(name='tabm_embedded',family='tabm',mode='raw',params=dict(embeddings=True,dropout=.1,weight_decay=.001))]
     manifest=dict(base=str(base.resolve()),source_manifest_sha256=digest(base/'manifest.json'),
+                                base_artifacts={str(p.relative_to(base)):digest(p) for p in dependencies},
                                 code_sha256=digest(__file__),packages={p:importlib.metadata.version(p) for p in ['torch','tabm','rtdl-num-embeddings']},candidates=candidates,seed=source['seed'])
     if (out/'manifest.json').exists():
         assert json.loads((out/'manifest.json').read_text())==manifest, 'Neural checkpoint manifest mismatch; use a fresh output directory'
     else:dump(out/'manifest.json',manifest)
     tr=pd.read_csv('train.csv');te=pd.read_csv('test.csv');folds=pd.read_csv(base/'folds.csv')
+    assert folds[ID].equals(tr[ID]), 'Base fold rows are not aligned with current training IDs'
+    assert te[ID].equals(pd.read_csv('sample_submission.csv')[ID]), 'Submission ID order mismatch'
     oof=pd.DataFrame({ID:tr[ID],TARGET:tr[TARGET],'fold':folds.fold})
     methods=['tabm','tabm_convex','tabm_equal','tabm_stack'];test={m:[] for m in methods};results=[]
+    fit_times=[];completed=0;total=source['outer_folds']*len(candidates)*source['inner_folds']
     for f in sorted(folds.fold.unique()):
         finish=out/'cache'/f'fold_{f}.joblib'
-        if finish.exists():saved=joblib.load(finish)
+        if finish.exists():
+            saved=joblib.load(finish);completed+=len(candidates)*source['inner_folds']
         else:
             b=joblib.load(base/'models'/f'fold_{f}.joblib');ot=b['outer_train'];ov=b['outer_validation']
             tx=tr.iloc[ot].reset_index(drop=True);ty=tx[TARGET]
@@ -136,13 +151,17 @@ def run(base,out,deadline='2026-09-13T18:45:00+05:30'):
                 ip=np.zeros(len(tx));es=[]
                 for j,(it,iv) in enumerate(inner):
                     file=out/'cache'/f'o{f}_{c["name"]}_i{j}.npz'
-                    if file.exists():z=np.load(file);ip[iv]=z['prediction'];es.append(int(z['epochs']));continue
+                    if file.exists():
+                        z=np.load(file);ip[iv]=z['prediction'];es.append(int(z['epochs']));completed+=1;continue
                     if deadline and (datetime.fromisoformat(deadline)-datetime.now().astimezone()).total_seconds()<300:
                         logger('Neural search cutoff: completed checkpoints retained');return
-                    logger(f'TRAIN TabM outer={f+1}/5 candidate={c["name"]} inner={j+1}/3')
+                    eta=(total-completed)*np.mean(fit_times or [60])/60
+                    logger(f'TRAIN TabM outer={f+1}/5 candidate={c["name"]} inner={j+1}/3 estimated_remaining={eta:.1f}m plus refits')
+                    start=time.monotonic()
                     model=fit_neural(c,tx.iloc[it],ty.iloc[it],source['seed']+int(f)*100+j,
                                      validation=(tx.iloc[iv],ty.iloc[iv]),log=logger)
                     ip[iv]=model.predict(tx.iloc[iv]);es.append(model.iterations)
+                    fit_times.append(time.monotonic()-start);completed+=1
                     np.savez_compressed(file,prediction=ip[iv],epochs=model.iterations)
                     logger(f'INNER RESULT {c["name"]} logloss={log_loss(ty.iloc[iv],ip[iv]):.7f} best_epoch={model.iterations}')
                 ps[c['name']]=ip;eps[c['name']]=int(np.median(es))

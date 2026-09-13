@@ -112,12 +112,6 @@ def run(args):
     if manifest_path.exists():
         if not args.resume: raise ValueError('Existing run: use --resume or a fresh output directory')
         old=json.loads(manifest_path.read_text())
-        if args.resume_control_update:
-            assert all(old['code'][k]==v for k,v in manifest['code'].items() if k!='train.py'), 'Only runner/control changes can reuse checkpoints'
-            dump(out/'manifest_before_control_update.json',old)
-            old['code']['train.py']=manifest['code']['train.py']
-            dump(manifest_path,old)
-            log('Resume: control-only update recorded; model, feature and ensemble hashes unchanged')
         for k in ['data','code','candidates','outer_folds','inner_folds','seed','smoke','packages']:
             if old[k]!=manifest[k]:raise ValueError(f'Resume mismatch in {k}; use a new output directory')
     else: dump(manifest_path,manifest)
@@ -144,6 +138,8 @@ def run(args):
     for f,(ot,ov) in enumerate(outer):
         finish_path=out/'cache'/f'outer_{f}.joblib'
         if finish_path.exists():
+            if not (out/'models'/f'fold_{f}.joblib').exists():
+                raise RuntimeError(f'Fold {f} completion exists without its model bundle; use a fresh output directory')
             saved=joblib.load(finish_path)
             for name in all_names:oof[name][ov]=saved['outer'][name];tests[name].append(saved['test'][name])
             fold_results.append(saved['result']);completed+=len(configs)*args.inner_folds
@@ -205,8 +201,9 @@ def run(args):
                     iterations=iterations,inner_train_losses=train_losses,
                     outer_metrics={name:metrics(y.iloc[ov],p) for name,p in pp.items()},best_inner_family=best_family)
         saved=dict(outer=pp,test=tp,result=result)
-        joblib.dump(saved,finish_path)
         joblib.dump(dict(models=fitted,chosen=chosen,combiners=combiners,outer_train=ot,outer_validation=ov),out/'models'/f'fold_{f}.joblib')
+        # The completion marker is written last so resume cannot skip a fold whose model bundle is absent.
+        joblib.dump(saved,finish_path)
         dump(out/f'fold_{f}_results.json',result)
         for name in all_names:oof[name][ov]=pp[name];tests[name].append(tp[name])
         fold_results.append(result)
@@ -233,7 +230,6 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output',default='runs/nested_v7');p.add_argument('--config')
     p.add_argument('--resume',action='store_true');p.add_argument('--smoke',action='store_true')
-    p.add_argument('--resume-control-update',action='store_true',help='Record runner-only code changes; model/feature/ensemble changes still invalidate caches')
     p.add_argument('--outer-folds',type=int,default=5);p.add_argument('--inner-folds',type=int,default=3)
     p.add_argument('--seed',type=int,default=20260913);p.add_argument('--threads',type=int,default=4)
     p.add_argument('--deadline',default='2026-09-13T18:45:00+05:30')

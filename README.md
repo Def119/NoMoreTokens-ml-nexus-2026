@@ -32,7 +32,7 @@ CatBoost CPU and GPU are benchmarked before a campaign. GPU results are not bitw
 
 ## Artifacts
 
-Each run contains the original-data/source hashes and software versions in `manifest.json`, full candidate configurations, row-level fold assignments, inner checkpoints, fitted outer models, per-fold selection/results, complete OOF predictions, candidate submissions and `comparison.csv`. Checkpoint/model directories are Git-ignored. Never combine caches across data, preprocessing, candidate, split or model changes. `--resume-control-update` permits only runner changes and saves the previous manifest; feature/model/ensemble hashes must still match.
+Each run contains the original-data/source hashes and software versions in `manifest.json`, full candidate configurations, row-level fold assignments, inner checkpoints, fitted outer models, per-fold selection/results, complete OOF predictions, candidate submissions and `comparison.csv`. Checkpoint/model directories are Git-ignored. Never combine caches across data, preprocessing, candidate, split or model changes. Resume requires matching data, source, candidates, splits and packages.
 
 `submission_recommended.csv` is selected from completed candidates; `submission_historical_v4.csv` preserves the previous competition submission. Submissions have exactly the sample submission's ID order and columns. New Kaggle scores are unknown until manual upload.
 
@@ -58,6 +58,15 @@ Historical scripts and files are preserved. New evidence and the new Trust Card 
 - [Spline transformations](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.SplineTransformer.html)
 - [Explainable Boosting Classifier](https://interpret.ml/docs/python/api/ExplainableBoostingClassifier.html)
 - [CatBoost GPU behavior](https://catboost.ai/docs/en/features/training-on-gpu)
+- [TabM: parameter-efficient tabular ensembles](https://github.com/yandex-research/tabm)
+
+## Additional bounded campaigns
+
+`configs/smooth_models.json` tests stronger shrinkage, simpler splines, shallower trees and coarser EBM bins. The fresh-partition campaign uses `--seed 20260914`; the original primary campaign uses `20260913`. Compare each against its own identically partitioned reference.
+
+An optional CUDA TabM campaign is available after installing `requirements-neural.txt`. Run `python -u -m nexus.neural --base runs/nested_v7 --output runs/tabm_v7`. It trains from random initialization and reconstructs base **inner** OOF predictions for fitting its ensembles. Do not run it concurrently with GPU CatBoost. The existing base run remains untouched. `scripts/combine_neural_evidence.py` can combine completed compatible evidence; this is a comparison, not a fit to outer labels.
+
+Use `scripts/review_campaigns.py` to collect completed scores, and `scripts/package_delivery.py --run <completed-run>` to package a verified report and reproduction sources. Run `scripts/execute_notebook.py <notebook>` and `scripts/validate_submission.py <submission>` before handoff. Uploaded Kaggle scores must be recorded separately from local validation.
 
 ## Competition logistics
 

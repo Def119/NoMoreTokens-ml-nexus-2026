@@ -17,6 +17,8 @@ if __name__=='__main__':
         (kernels/'kernel.json').write_text(json.dumps(dict(argv=[sys.executable,'-m','ipykernel_launcher','-f','{connection_file}'],
                                                           display_name='Nexus project Python',language='python')),encoding='utf-8')
         os.environ['JUPYTER_PATH']=temp+os.pathsep+os.environ.get('JUPYTER_PATH','')
+        os.environ['IPYTHONDIR']=str(Path(temp)/'ipython')
+        os.environ['JUPYTER_RUNTIME_DIR']=str(Path(temp)/'runtime')
         notebook=nbformat.read(path,as_version=4)
         notebook=NotebookClient(notebook,timeout=180,kernel_name='nexus-project',resources={'metadata':{'path':str(root)}}).execute()
         nbformat.write(notebook,path)
