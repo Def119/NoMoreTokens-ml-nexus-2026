@@ -51,6 +51,96 @@
 - **Our Best LB Score:** **`0.33574`** (Model 3 / v4 Tuned) ← still our best
 - **Our v6 Submission:** `0.33609` ⚠️ regressed vs v4 despite better local CV
 
+## 9. September 13, 2026 controlled 50-fold follow-up
+
+The reported current Kaggle champion is the user-uploaded final20 submission at **0.33507**. Kaggle values are not uploaded or verified by this repository workflow; the values below are local OOF evidence.
+
+The fixed final20 recipe was refit with 50 stratified folds. No new features, target encoding, feature pruning, or hyperparameter search was introduced. Each outer model used 6,860 of 7,000 rows (98%). The 50-fold run improved local OOF log loss only slightly:
+
+| Recipe | Local OOF log loss | Difference vs final20 |
+|---|---:|---:|
+| final20 calibrated ensemble | 0.3487788 | baseline |
+| fixed 50-fold calibrated ensemble | 0.3486851 | −0.0000937 |
+| scaled 50-fold, +3% LGBM/CatBoost iterations | 0.3486784 | −0.0001004 |
+| scaled 50-fold + 25% v6 | 0.3480451 | −0.0007337 |
+| **scaled 50-fold + 30% v6** | **0.3479486** | **−0.0008302** |
+| scaled 50-fold + 50% v6 | 0.3476611 | −0.0011176 |
+
+The recommended next upload is `runs/final50_scaled_v13/submission_scaled50_v6_30.csv`. It contains 70% scaled 50-fold predictions and 30% v6 predictions, is aligned to the sample-submission IDs, and passed `scripts/validate_submission.py`. A 5,000-draw paired patient bootstrap against final20 gave a conditional 95% interval for the 30% blend's log-loss difference of **[−0.0014067, −0.0002507]**. This interval conditions on reused OOF predictions and does not remove adaptive-research or v6-overfit risk.
+
+The 30% v6 blend is preferred over the 50% blend because v6 previously scored worse on Kaggle (`0.33609`) despite stronger local OOF. The 30% file is therefore a controlled hedge, not a guaranteed leaderboard improvement. Keep the `0.33507` final20 upload as the fallback until Kaggle confirms the new candidate.
+
+**Post-upload decision:** The v6-derived candidate did not improve the Kaggle score. Therefore, v6 predictions, target-encoding outputs, and any blend containing v6 must not be used for future model selection or submissions. The v6 artifacts remain preserved only for audit and comparison. Future experiments must be evaluated without v6 inputs and must beat the current non-v6 champion before submission.
+
+Artifacts and reproduction sources:
+
+- `nexus/final_refit50_fixed.py` — frozen 50-fold refit.
+- `nexus/final_refit50_scaled.py` — same recipe with a fixed 1.03 iteration scale.
+- `scripts/prepare_next_candidates.py` — reproducible blend and bootstrap comparison.
+- `runs/final50_fixed_v12/` and `runs/final50_scaled_v13/` — logs, OOF predictions, summaries, and validated submissions.
+
+Next development should not spend another large run on more folds alone. Revert to the best non-v6 recipe and test a properly nested meta-blend or another target-independent model/feature source. Do not increase v6 weight or reuse v6 predictions.
+
+## 10. Non-v6 20-fold seed-bag follow-up
+
+Because the 20-fold submission remains the best Kaggle result, a new experiment retained its exact 20-fold split, five frozen component configurations, stopping iterations, and fixed calibration. It added only target-independent seed averaging for LightGBM and CatBoost.
+
+| Recipe | Local OOF log loss | Difference vs final20 |
+|---|---:|---:|
+| final20 calibrated ensemble | 0.3487788 | baseline |
+| 20-fold, 3 tree seeds | 0.3486442 | −0.0001346 |
+| **20-fold, 5 tree seeds** | **0.3486222** | **−0.0001565** |
+
+The five-seed submission passed ID/probability validation and is at `runs/final20_seedbag5_v15/submission_seedbag.csv`. A conditional 10,000-draw paired patient bootstrap versus final20 gave a 95% interval of **[−0.0003261, +0.0000132]**, so the local gain is promising but not statistically decisive. No v6 predictions or v6-derived features were used.
+
+The five-seed file is the next non-v6 candidate for manual Kaggle testing. Keep `KAGGLE_UPLOAD_final20.csv` as the fallback until the leaderboard confirms an improvement. If five-seed averaging also fails on Kaggle, stop increasing seed counts and move to a genuinely different target-independent model family or a properly nested meta-blend.
+
+Artifacts and reproduction sources:
+
+- `nexus/final20_seedbag.py` — three-seed non-v6 bag.
+- `nexus/final20_seedbag5.py` — five-seed wrapper.
+- `runs/final20_seedbag_v14/` and `runs/final20_seedbag5_v15/` — logs, OOF predictions, summaries, and submissions.
+
+## 11. Engineered-tree branch: rejected
+
+A dedicated non-v6 engineered LightGBM/CatBoost branch was evaluated using the same 20 outer folds as final20. The branch used only row-local engineered features already defined in `nexus/features.py`. In every outer fold, early stopping iterations and sigmoid calibration were fit from three inner folds of that outer-training partition. The final blend was fixed before training at 80% final20 base + 20% engineered branch.
+
+| Recipe | Local OOF log loss | Decision |
+|---|---:|---|
+| final20 calibrated ensemble | 0.3487788 | retain as reference |
+| engineered tree branch | 0.3504667 | reject |
+| final20 80% + engineered branch 20% | 0.3489076 | reject |
+
+The branch and blend are worse than final20, so neither submission should be uploaded. This closes the "add existing engineered features to raw tree models" direction for the current frozen configurations. Artifacts are retained at `runs/engineered_tree_v16/`; the reproducer is `nexus/engineered_tree_branch.py`. No v6 prediction, target encoding, or feature pruning was used.
+
+## 12. Thirty-fold five-seed test: no advantage over 20-fold five-seed
+
+A non-v6 30-fold, five-seed run tested the intermediate training fraction requested between 20 and 50 folds. Each model trained on 6,766–6,767 rows (about 96.7% of training data). The five-seed tree averaging, frozen component configurations, and fixed calibration were unchanged from the 20-fold seed-bag run.
+
+| Recipe | Local OOF log loss | Difference vs final20 |
+|---|---:|---:|
+| final20 calibrated ensemble | 0.3487788 | baseline |
+| 20-fold, 5 tree seeds | **0.3486222** | **−0.0001565** |
+| 30-fold, 5 tree seeds | 0.3486264 | −0.0001523 |
+
+The 30-fold run is **+0.0000042** worse than the 20-fold five-seed result. Its 10,000-draw paired-bootstrap interval against the 20-fold five-seed run is [−0.0002919, +0.0002928], so the difference is indistinguishable from noise. Keep the cheaper 20-fold five-seed candidate; do not prefer or upload the 30-fold file solely because it has more folds.
+
+The 30-fold submission was validated and retained for audit at `runs/final30_seedbag5_v17/submission_seedbag.csv`. Its reproducer is `nexus/final30_seedbag5.py`.
+
+## 13. Final20 documentation package
+
+The current champion for reporting is the original final20 calibrated ensemble, not the untested 20-fold five-seed candidate. Its user-reported public Kaggle score is **0.33507**. The frozen local evidence is OOF log loss **0.3487788**, Brier **0.1020847**, and ROC-AUC **0.69366**.
+
+The reporting package is now generated from final20 OOF predictions only:
+
+- `deliverables_final/TRUST_CARD.md` - current detailed Trust Card, aligned to `consideration.md`.
+- `output/pdf/TRUST_CARD_FINAL20.pdf` - PDF version with calibration, fold stability, threshold, and subgroup figures.
+- `deliverables_final/final20_submission_notebook.ipynb` - audit notebook for the selected final20 run.
+- `scripts/final20_trust_card_figures.py` - reproducible evidence tables and figure builder.
+- `scripts/render_final20_trust_card_pdf.py` - reproducible PDF renderer.
+
+The package includes final20-specific subgroup metrics and a retrospective 10% entropy-referral analysis. Existing SHAP/sensitivity graphics are treated as related component diagnostics rather than complete explanations of the final20 ensemble. The user-reported Kaggle score is documented as external leaderboard context and is not independently verified by the repository workflow.
+
 ---
 
 ## 4. Model Iteration Log

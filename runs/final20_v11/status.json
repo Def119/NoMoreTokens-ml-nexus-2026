@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-09-13T22:34:37.687870+05:30",
+  "elapsed_seconds": 703.4219999999987,
+  "eta_seconds": 0.0,
+  "deadline": "2026-09-13T23:45:00+05:30",
+  "completed_fits": 400,
+  "total_fits": 400,
+  "message": "COMPLETE {'equal': {'log_loss': 0.3488811814345274, 'brier': 0.10215331660272951, 'auc': 0.6937178053360525}, 'equal_cal': {'log_loss': 0.34877876067389063, 'brier': 0.10208469336389953, 'auc': 0.6936623408712447}}",
+  "fold": 20,
+  "trial": 5,
+  "inner_fold": null,
+  "phase": "complete"
+}

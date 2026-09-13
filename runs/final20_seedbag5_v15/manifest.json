@@ -1,0 +1,89 @@
+{
+  "source": "runs\\final20_v11",
+  "outer_folds": 20,
+  "seed": 20260914,
+  "tree_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "configs": [
+    {
+      "name": "lr_engineered_c0.1_l0.8",
+      "family": "lr",
+      "mode": "engineered",
+      "params": {
+        "C": 0.1,
+        "l1_ratio": 0.8
+      }
+    },
+    {
+      "name": "spline_k2_c0.01",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 2,
+        "C": 0.01,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "lgb_raw_d1_r5",
+      "family": "lgb",
+      "mode": "raw",
+      "params": {
+        "max_depth": 1,
+        "num_leaves": 2,
+        "min_child_samples": 150,
+        "reg_lambda": 5,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "cb_raw_d3_r20",
+      "family": "cb",
+      "mode": "raw",
+      "params": {
+        "depth": 3,
+        "l2_leaf_reg": 20,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "ebm_bins16",
+      "family": "ebm",
+      "mode": "raw",
+      "params": {
+        "interactions": 0,
+        "outer_bags": 8,
+        "max_bins": 16,
+        "max_interaction_bins": 16,
+        "learning_rate": 0.015,
+        "smoothing_rounds": 500,
+        "max_rounds": 5000,
+        "min_samples_leaf": 30
+      }
+    }
+  ],
+  "frozen_iterations": {
+    "lgb": 538,
+    "cb": 221
+  },
+  "calibrator": {
+    "C": 1.0,
+    "coef": 1.0678614270548785,
+    "intercept": 0.12156063036794024
+  },
+  "note": "Non-v6 seed bag; only target-independent tree seed averaging added."
+}
