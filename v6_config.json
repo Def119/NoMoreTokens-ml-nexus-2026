@@ -1,0 +1,74 @@
+{
+  "version": "v6",
+  "seeds": [
+    42,
+    2026,
+    7777
+  ],
+  "n_splits": 8,
+  "stack_method": "ridge",
+  "target_encoding_cols": [
+    "hospital_type",
+    "care_pathway",
+    "region",
+    "discharge_disposition"
+  ],
+  "target_encoding_smoothing": 20,
+  "features_pruned": [
+    "diabetes",
+    "hypertension",
+    "chronic_kidney_disease",
+    "missing_hemoglobin_g_dl",
+    "missing_creatinine_mg_dl",
+    "missing_sodium_mmol_l",
+    "missing_heart_rate_bpm",
+    "missing_systolic_bp_mmhg",
+    "missing_followup_days",
+    "total_missing_labs",
+    "anemia_flag",
+    "renal_impairment",
+    "hypertension_stage1",
+    "hypertension_stage2",
+    "hypertension_urgency",
+    "tachycardia",
+    "bradycardia",
+    "vitals_instability",
+    "hyponatremia",
+    "discharge_vulnerability",
+    "has_prior_admission",
+    "followup_missing_or_long",
+    "abnormal_vitals_count",
+    "hf_tachycardia",
+    "ckd_hyponatremia",
+    "diabetes_renal"
+  ],
+  "features_total": 41,
+  "slsqp_weights": {
+    "LightGBM": 0.5527944192279244,
+    "CatBoost": 0.26950665951513436,
+    "LogisticReg": 0.1776989212569413
+  },
+  "optuna_params": {
+    "lightgbm": {
+      "learning_rate": 0.014288802584211766,
+      "num_leaves": 23,
+      "max_depth": 4,
+      "min_child_samples": 140,
+      "colsample_bytree": 0.6126919131158444,
+      "subsample": 0.8396670551215201,
+      "reg_alpha": 0.027037059314446357,
+      "reg_lambda": 8.190588823721924
+    },
+    "logistic_regression": {
+      "C": 0.11256816545070104,
+      "l1_ratio": 0.8499516031164766
+    },
+    "catboost": {
+      "learning_rate": 0.032871623396815375,
+      "depth": 4,
+      "l2_leaf_reg": 1.1694611659395748,
+      "random_strength": 1.4260813629743905,
+      "bagging_temperature": 0.8206056283635523
+    }
+  }
+}

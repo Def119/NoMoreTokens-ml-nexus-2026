@@ -1,0 +1,7 @@
+lightgbm==4.7.0
+catboost>=1.2
+scikit-learn>=1.6
+optuna>=4.0
+scipy>=1.15
+pandas>=3.0
+shap>=0.42

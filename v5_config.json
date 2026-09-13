@@ -1,0 +1,53 @@
+{
+  "seeds": [
+    42,
+    2026,
+    7777
+  ],
+  "n_splits": 5,
+  "blend_mode": "prob",
+  "optimal_weights": {
+    "LightGBM": 0.40552678409936194,
+    "CatBoost": 0.32619796435025034,
+    "LogisticReg": 0.2682752515503878
+  },
+  "clip_eps": 1e-05,
+  "new_features": {
+    "contextual_aggregations": [
+      "los_rel_hospital",
+      "meds_rel_comorbidity",
+      "admissions_rel_pathway",
+      "age_rel_pathway",
+      "socioeconomic_rel_region",
+      "followup_rel_pathway"
+    ],
+    "chronic_lab_interactions": [
+      "hf_tachycardia",
+      "ckd_hyponatremia",
+      "diabetes_renal"
+    ]
+  },
+  "optuna_params": {
+    "lightgbm": {
+      "learning_rate": 0.014288802584211766,
+      "num_leaves": 23,
+      "max_depth": 4,
+      "min_child_samples": 140,
+      "colsample_bytree": 0.6126919131158444,
+      "subsample": 0.8396670551215201,
+      "reg_alpha": 0.027037059314446357,
+      "reg_lambda": 8.190588823721924
+    },
+    "logistic_regression": {
+      "C": 0.11256816545070104,
+      "l1_ratio": 0.8499516031164766
+    },
+    "catboost": {
+      "learning_rate": 0.032871623396815375,
+      "depth": 4,
+      "l2_leaf_reg": 1.1694611659395748,
+      "random_strength": 1.4260813629743905,
+      "bagging_temperature": 0.8206056283635523
+    }
+  }
+}

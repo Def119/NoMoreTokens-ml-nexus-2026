@@ -1,0 +1,26 @@
+variable,type,description,trustworthy_ai_note
+patient_id,Identifier,Unique synthetic patient identifier,No
+age,Numeric,Age in years,No
+sex,Categorical,Recorded sex category,Sensitive attribute for subgroup audit
+rurality,Categorical,Urban / Semi-urban / Rural residence context,Context / subgroup audit
+socioeconomic_index,Numeric,Synthetic standardized socioeconomic index; higher = greater advantage,Context / subgroup audit
+hospital_type,Categorical,Teaching / General / District hospital,Potential transportability factor
+region,Categorical,Synthetic broad region,Potential transportability factor
+prior_admissions_12m,Integer,Admissions during prior 12 months,Predictor
+comorbidity_count,Integer,Count of documented chronic comorbidities,Predictor
+diabetes,Binary,1 if documented,Predictor
+hypertension,Binary,1 if documented,Predictor
+chronic_kidney_disease,Binary,1 if documented,Predictor
+heart_failure,Binary,1 if documented,Predictor
+length_of_stay_days,Numeric,Index-admission length of stay,Predictor
+medication_count,Integer,Number of medications at discharge,Predictor
+missed_appointments_12m,Integer,Missed appointments in prior 12 months,Predictor
+followup_days,Numeric,Days until planned follow-up; may be missing,Predictor / access-related
+hemoglobin_g_dl,Numeric,Hemoglobin; may be missing,Predictor
+creatinine_mg_dl,Numeric,Creatinine; may be missing,Predictor
+sodium_mmol_l,Numeric,Serum sodium; may be missing,Predictor
+heart_rate_bpm,Numeric,Heart rate; may be missing,Predictor
+systolic_bp_mmhg,Numeric,Systolic blood pressure; may be missing,Predictor
+discharge_disposition,Categorical,Discharge destination,Predictor
+care_pathway,Categorical,Synthetic pathway/workflow code,Potentially unstable context variable
+readmitted_30d,Binary target,1 = unplanned readmission within 30 days,Target; train only

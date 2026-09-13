@@ -1,0 +1,23 @@
+{
+  "lightgbm": {
+    "learning_rate": 0.014288802584211766,
+    "num_leaves": 23,
+    "max_depth": 4,
+    "min_child_samples": 140,
+    "colsample_bytree": 0.6126919131158444,
+    "subsample": 0.8396670551215201,
+    "reg_alpha": 0.027037059314446357,
+    "reg_lambda": 8.190588823721924
+  },
+  "logistic_regression": {
+    "C": 0.11256816545070104,
+    "l1_ratio": 0.8499516031164766
+  },
+  "catboost": {
+    "learning_rate": 0.032871623396815375,
+    "depth": 4,
+    "l2_leaf_reg": 1.1694611659395748,
+    "random_strength": 1.4260813629743905,
+    "bagging_temperature": 0.8206056283635523
+  }
+}
