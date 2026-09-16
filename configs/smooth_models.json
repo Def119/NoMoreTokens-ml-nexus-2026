@@ -1,0 +1,376 @@
+{
+  "description": "Second bounded campaign: stronger shrinkage, lower tree depth and coarser additive effects; motivated by inner-CV capacity diagnostics and InterpretML guidance. Validate on a fresh outer partition.",
+  "candidates": [
+    {
+      "name": "lr_raw_c0.003_l0",
+      "family": "lr",
+      "mode": "raw",
+      "params": {
+        "C": 0.003,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "lr_raw_c0.03_l0",
+      "family": "lr",
+      "mode": "raw",
+      "params": {
+        "C": 0.03,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "lr_raw_c0.01_l0.5",
+      "family": "lr",
+      "mode": "raw",
+      "params": {
+        "C": 0.01,
+        "l1_ratio": 0.5
+      }
+    },
+    {
+      "name": "lr_raw_c0.1_l0.5",
+      "family": "lr",
+      "mode": "raw",
+      "params": {
+        "C": 0.1,
+        "l1_ratio": 0.5
+      }
+    },
+    {
+      "name": "lr_engineered_c0.01_l0.8",
+      "family": "lr",
+      "mode": "engineered",
+      "params": {
+        "C": 0.01,
+        "l1_ratio": 0.8
+      }
+    },
+    {
+      "name": "lr_engineered_c0.1_l0.8",
+      "family": "lr",
+      "mode": "engineered",
+      "params": {
+        "C": 0.1,
+        "l1_ratio": 0.8
+      }
+    },
+    {
+      "name": "spline_k2_c0.003",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 2,
+        "C": 0.003,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "spline_k2_c0.01",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 2,
+        "C": 0.01,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "spline_k2_c0.03",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 2,
+        "C": 0.03,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "spline_k3_c0.003",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 3,
+        "C": 0.003,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "spline_k3_c0.01",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 3,
+        "C": 0.01,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "spline_k3_c0.03",
+      "family": "spline",
+      "mode": "raw",
+      "params": {
+        "knots": 3,
+        "C": 0.03,
+        "l1_ratio": 0
+      }
+    },
+    {
+      "name": "lgb_raw_d1_r5",
+      "family": "lgb",
+      "mode": "raw",
+      "params": {
+        "max_depth": 1,
+        "num_leaves": 2,
+        "min_child_samples": 150,
+        "reg_lambda": 5,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "lgb_raw_d1_r20",
+      "family": "lgb",
+      "mode": "raw",
+      "params": {
+        "max_depth": 1,
+        "num_leaves": 2,
+        "min_child_samples": 150,
+        "reg_lambda": 20,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "lgb_raw_d2_r20",
+      "family": "lgb",
+      "mode": "raw",
+      "params": {
+        "max_depth": 2,
+        "num_leaves": 4,
+        "min_child_samples": 150,
+        "reg_lambda": 20,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "lgb_engineered_d1_r5",
+      "family": "lgb",
+      "mode": "engineered",
+      "params": {
+        "max_depth": 1,
+        "num_leaves": 2,
+        "min_child_samples": 150,
+        "reg_lambda": 5,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "lgb_engineered_d1_r20",
+      "family": "lgb",
+      "mode": "engineered",
+      "params": {
+        "max_depth": 1,
+        "num_leaves": 2,
+        "min_child_samples": 150,
+        "reg_lambda": 20,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "lgb_engineered_d2_r20",
+      "family": "lgb",
+      "mode": "engineered",
+      "params": {
+        "max_depth": 2,
+        "num_leaves": 4,
+        "min_child_samples": 150,
+        "reg_lambda": 20,
+        "reg_alpha": 0.1,
+        "colsample_bytree": 1,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "n_estimators": 3000,
+        "learning_rate": 0.025
+      }
+    },
+    {
+      "name": "cb_raw_d2_r5",
+      "family": "cb",
+      "mode": "raw",
+      "params": {
+        "depth": 2,
+        "l2_leaf_reg": 5,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "cb_raw_d2_r20",
+      "family": "cb",
+      "mode": "raw",
+      "params": {
+        "depth": 2,
+        "l2_leaf_reg": 20,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "cb_raw_d3_r20",
+      "family": "cb",
+      "mode": "raw",
+      "params": {
+        "depth": 3,
+        "l2_leaf_reg": 20,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "cb_engineered_d2_r5",
+      "family": "cb",
+      "mode": "engineered",
+      "params": {
+        "depth": 2,
+        "l2_leaf_reg": 5,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "cb_engineered_d2_r20",
+      "family": "cb",
+      "mode": "engineered",
+      "params": {
+        "depth": 2,
+        "l2_leaf_reg": 20,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "cb_engineered_d3_r20",
+      "family": "cb",
+      "mode": "engineered",
+      "params": {
+        "depth": 3,
+        "l2_leaf_reg": 20,
+        "iterations": 2000,
+        "learning_rate": 0.035,
+        "bootstrap_type": "Bayesian",
+        "bagging_temperature": 0.5,
+        "random_strength": 1
+      }
+    },
+    {
+      "name": "ebm_bins16",
+      "family": "ebm",
+      "mode": "raw",
+      "params": {
+        "interactions": 0,
+        "outer_bags": 8,
+        "max_bins": 16,
+        "max_interaction_bins": 16,
+        "learning_rate": 0.015,
+        "smoothing_rounds": 500,
+        "max_rounds": 5000,
+        "min_samples_leaf": 30
+      }
+    },
+    {
+      "name": "ebm_bins32",
+      "family": "ebm",
+      "mode": "raw",
+      "params": {
+        "interactions": 0,
+        "outer_bags": 8,
+        "max_bins": 32,
+        "max_interaction_bins": 16,
+        "learning_rate": 0.015,
+        "smoothing_rounds": 500,
+        "max_rounds": 5000,
+        "min_samples_leaf": 30
+      }
+    },
+    {
+      "name": "reference_lgb",
+      "family": "lgb",
+      "mode": "engineered",
+      "params": {
+        "learning_rate": 0.014288802584211766,
+        "num_leaves": 23,
+        "max_depth": 4,
+        "min_child_samples": 140,
+        "colsample_bytree": 0.6126919131158444,
+        "subsample": 0.8396670551215201,
+        "reg_alpha": 0.027037059314446357,
+        "reg_lambda": 8.190588823721924,
+        "n_estimators": 2000,
+        "subsample_freq": 0
+      }
+    },
+    {
+      "name": "reference_cb",
+      "family": "cb",
+      "mode": "engineered",
+      "params": {
+        "learning_rate": 0.032871623396815375,
+        "depth": 4,
+        "l2_leaf_reg": 1.1694611659395748,
+        "random_strength": 1.4260813629743905,
+        "bagging_temperature": 0.8206056283635523,
+        "iterations": 2000,
+        "border_count": 128
+      }
+    },
+    {
+      "name": "reference_lr",
+      "family": "lr",
+      "mode": "engineered",
+      "params": {
+        "C": 0.11256816545070104,
+        "l1_ratio": 0.8499516031164766,
+        "legacy": true
+      }
+    }
+  ]
+}

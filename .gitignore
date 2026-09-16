@@ -1,0 +1,9 @@
+.python/
+.venv/
+__pycache__/
+*.py[cod]
+runs/**/models/
+runs/**/cache/
+runs/smoke*/
+*.tmp
+.ipynb_checkpoints/

@@ -1,0 +1,121 @@
+{
+  "data": {
+    "train.csv": "fb26619d0415be5b7ac22ddb38ce928bf5272d872cb4c7ea45efde044219d306",
+    "test.csv": "198252a24eb467afd14fdb62e688ebff1771705b0ca089364a651034fb46c1ef",
+    "sample_submission.csv": "c7c48e07708d1fead87143f90bcf1d23aba92892753d5e638f5d6a362d27810f"
+  },
+  "source": {
+    "nexus/final_refit20.py": "e8d6d3779d5d247c18e46eb13d9c1c27101a2f31b3b267c00dae0279a4c5897b",
+    "nexus/final_refit.py": "82dd4a33cc19965db3170028f54e8f2f973e2564cc606594262486012ce43371",
+    "nexus/features.py": "5b55f5daccd9ecb7db5a6c76ed96ae08632d22e37ced1909ea6b9ef72804c3fb",
+    "nexus/models.py": "1427f46ad2d6990f96ad06850312cd8789b76abc858b3abe8f6ec843ebd26f65",
+    "nexus/ensemble.py": "6a94416165f814c0b9539b84cb73892b577af331b98e0ae589507402a6fdda8b",
+    "nexus/train.py": "2ffd0b2d92f77ae52081b5cc6107475d3799ba746f18209507c13a831b4a921c",
+    "tests/test_final_refit20.py": "754fb1ccb5462534796e41a69ead87a6937ddf3229dae714325a9166dd802bc8"
+  },
+  "baselines": {
+    "runs\\final10_v9\\manifest.json": "70a3368347841aa7e92271c7b6775ad868bdaa8c0add20db6ba706ef4e15cfa6",
+    "runs\\final10_v9\\resolved_config.json": "6b39f33eebcd9d628612b71a762f232269e2bd8839a39d25e685f3c209e6256f",
+    "runs\\final10_v9\\summary.json": "c4edd613143a532c2a699b348c28173dfb8abcc780d69e286a18f66ebf39f5d9",
+    "runs\\final10_v9\\oof.csv": "40982d39aa72492d6c9cbd90b8ec91c19daf16d5d1acf38992123932131aae54",
+    "runs\\smooth_v8\\manifest.json": "ade2304bc68d4ac1dfe02a36e1c3029bf5d03919bbb5b437c6fbae2301067df9",
+    "runs\\smooth_v8\\resolved_config.json": "55234a5fe0a5b31ee4880440619ad418f9e9d9d706e204f1974cc323f6f85aac",
+    "runs\\smooth_v8\\summary.json": "5590254c5443abf7c3c42a71bfcb3077f45f7f1fab52c4c0faa008979259b7fd",
+    "runs\\smooth_v8\\oof.csv": "f4bd00bce415a1bbe4566b2b3043eb31ec339f4ba367804a0374636ccb5219a7"
+  },
+  "fixed_config": {
+    "candidates": [
+      {
+        "name": "lr_engineered_c0.1_l0.8",
+        "family": "lr",
+        "mode": "engineered",
+        "params": {
+          "C": 0.1,
+          "l1_ratio": 0.8
+        }
+      },
+      {
+        "name": "spline_k2_c0.01",
+        "family": "spline",
+        "mode": "raw",
+        "params": {
+          "knots": 2,
+          "C": 0.01,
+          "l1_ratio": 0
+        }
+      },
+      {
+        "name": "lgb_raw_d1_r5",
+        "family": "lgb",
+        "mode": "raw",
+        "params": {
+          "max_depth": 1,
+          "num_leaves": 2,
+          "min_child_samples": 150,
+          "reg_lambda": 5,
+          "reg_alpha": 0.1,
+          "colsample_bytree": 1,
+          "subsample": 0.85,
+          "subsample_freq": 1,
+          "n_estimators": 3000,
+          "learning_rate": 0.025
+        }
+      },
+      {
+        "name": "cb_raw_d3_r20",
+        "family": "cb",
+        "mode": "raw",
+        "params": {
+          "depth": 3,
+          "l2_leaf_reg": 20,
+          "iterations": 2000,
+          "learning_rate": 0.035,
+          "bootstrap_type": "Bayesian",
+          "bagging_temperature": 0.5,
+          "random_strength": 1
+        }
+      },
+      {
+        "name": "ebm_bins16",
+        "family": "ebm",
+        "mode": "raw",
+        "params": {
+          "interactions": 0,
+          "outer_bags": 8,
+          "max_bins": 16,
+          "max_interaction_bins": 16,
+          "learning_rate": 0.015,
+          "smoothing_rounds": 500,
+          "max_rounds": 5000,
+          "min_samples_leaf": 30
+        }
+      }
+    ],
+    "methods": [
+      "equal",
+      "equal_cal"
+    ],
+    "equal_cal_C": 1.0
+  },
+  "fixed_config_sha256": "5fbf666f493d91c3c541d94d0915a268a7ae815243e256850609bfc591e1f002",
+  "outer_folds": 20,
+  "inner_folds": 3,
+  "seed": 20260914,
+  "threads": 4,
+  "backend": "GPU",
+  "total_fits": 400,
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "interpret-core": "0.7.8",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "evaluation_note": "Post-hoc adaptive training-fraction expansion: this 20-fold/95% experiment was requested after inspecting smooth_v8 and final10_v9 results on the same labels. Five configurations, equal weights and equal_cal C=1 are frozen from final10. Outer labels are scoring-only within this run. Conditional paired patient-bootstrap intervals omit training/tuning uncertainty, overlapping-fold dependence and adaptive selection. A CI containing zero does not establish statistical superiority. Even a CI excluding zero is conditional evidence, not independent confirmation after this post-hoc expansion. Higher training fraction does not guarantee test improvement.",
+  "nondeterminism": "CatBoost GPU floating-point operations may be nondeterministic."
+}

@@ -1,0 +1,424 @@
+[22:20:28] elapsed=0.0m ETA=14.7m Frozen 20-fold campaign: 300 inner fits + 100 refits, one GPU, threads=4
+[22:20:28] elapsed=0.0m ETA=14.7m Deadline cutoff; all finished fits retained. Resume with a new deadline.
+[22:22:54] elapsed=0.0m ETA=14.7m Frozen 20-fold campaign: 300 inner fits + 100 refits, one GPU, threads=4
+[22:22:54] elapsed=0.0m ETA=14.7m FIT outer=1/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:22:54] elapsed=0.0m ETA=1.8m FIT outer=1/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:22:55] elapsed=0.0m ETA=3.1m FIT outer=1/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:22:55] elapsed=0.0m ETA=2.6m REFIT outer=1/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:22:56] elapsed=0.0m ETA=2.7m FIT outer=1/20 spline_k2_c0.01 inner=1/3
+[22:22:56] elapsed=0.0m ETA=2.2m FIT outer=1/20 spline_k2_c0.01 inner=2/3
+[22:22:56] elapsed=0.0m ETA=1.8m FIT outer=1/20 spline_k2_c0.01 inner=3/3
+[22:22:56] elapsed=0.0m ETA=1.6m REFIT outer=1/20 spline_k2_c0.01 n=6650 iterations=None
+[22:22:56] elapsed=0.0m ETA=1.4m FIT outer=1/20 lgb_raw_d1_r5 inner=1/3
+[22:22:56] elapsed=0.0m ETA=1.3m FIT outer=1/20 lgb_raw_d1_r5 inner=2/3
+[22:22:56] elapsed=0.0m ETA=1.2m FIT outer=1/20 lgb_raw_d1_r5 inner=3/3
+[22:22:56] elapsed=0.0m ETA=1.2m REFIT outer=1/20 lgb_raw_d1_r5 n=6650 iterations=549
+[22:22:56] elapsed=0.0m ETA=1.1m FIT outer=1/20 cb_raw_d3_r20 inner=1/3
+[22:23:02] elapsed=0.1m ETA=3.9m FIT outer=1/20 cb_raw_d3_r20 inner=2/3
+[22:23:08] elapsed=0.2m ETA=6.3m FIT outer=1/20 cb_raw_d3_r20 inner=3/3
+[22:23:16] elapsed=0.4m ETA=9.1m REFIT outer=1/20 cb_raw_d3_r20 n=6650 iterations=188
+[22:23:17] elapsed=0.4m ETA=9.1m FIT outer=1/20 ebm_bins16 inner=1/3
+[22:23:21] elapsed=0.4m ETA=9.7m FIT outer=1/20 ebm_bins16 inner=2/3
+[22:23:22] elapsed=0.5m ETA=9.6m FIT outer=1/20 ebm_bins16 inner=3/3
+[22:23:23] elapsed=0.5m ETA=9.4m REFIT outer=1/20 ebm_bins16 n=6650 iterations=None
+[22:23:25] elapsed=0.5m ETA=9.4m OUTER 1/20 {'equal': {'log_loss': 0.34237794932023746, 'brier': 0.10117870425582096, 'auc': 0.7238562091503268}, 'equal_cal': {'log_loss': 0.341550191332437, 'brier': 0.1010055866459077, 'auc': 0.7238562091503268}}
+[22:23:25] elapsed=0.5m ETA=9.4m FIT outer=2/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:23:25] elapsed=0.5m ETA=9.0m FIT outer=2/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:23:25] elapsed=0.5m ETA=8.7m FIT outer=2/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:23:26] elapsed=0.5m ETA=8.4m REFIT outer=2/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:23:26] elapsed=0.5m ETA=8.1m FIT outer=2/20 spline_k2_c0.01 inner=1/3
+[22:23:26] elapsed=0.5m ETA=7.8m FIT outer=2/20 spline_k2_c0.01 inner=2/3
+[22:23:26] elapsed=0.5m ETA=7.4m FIT outer=2/20 spline_k2_c0.01 inner=3/3
+[22:23:26] elapsed=0.5m ETA=7.2m REFIT outer=2/20 spline_k2_c0.01 n=6650 iterations=None
+[22:23:26] elapsed=0.5m ETA=6.9m FIT outer=2/20 lgb_raw_d1_r5 inner=1/3
+[22:23:26] elapsed=0.5m ETA=6.7m FIT outer=2/20 lgb_raw_d1_r5 inner=2/3
+[22:23:27] elapsed=0.5m ETA=6.4m FIT outer=2/20 lgb_raw_d1_r5 inner=3/3
+[22:23:27] elapsed=0.6m ETA=6.2m REFIT outer=2/20 lgb_raw_d1_r5 n=6650 iterations=537
+[22:23:27] elapsed=0.6m ETA=6.0m FIT outer=2/20 cb_raw_d3_r20 inner=1/3
+[22:23:34] elapsed=0.7m ETA=7.2m FIT outer=2/20 cb_raw_d3_r20 inner=2/3
+[22:23:41] elapsed=0.8m ETA=8.1m FIT outer=2/20 cb_raw_d3_r20 inner=3/3
+[22:23:45] elapsed=0.9m ETA=8.7m REFIT outer=2/20 cb_raw_d3_r20 n=6650 iterations=208
+[22:23:48] elapsed=0.9m ETA=8.8m FIT outer=2/20 ebm_bins16 inner=1/3
+[22:23:49] elapsed=0.9m ETA=8.7m FIT outer=2/20 ebm_bins16 inner=2/3
+[22:23:50] elapsed=0.9m ETA=8.7m FIT outer=2/20 ebm_bins16 inner=3/3
+[22:23:51] elapsed=1.0m ETA=8.6m REFIT outer=2/20 ebm_bins16 n=6650 iterations=None
+[22:23:52] elapsed=1.0m ETA=8.5m OUTER 2/20 {'equal': {'log_loss': 0.33796494211111944, 'brier': 0.10034351903413812, 'auc': 0.7424242424242424}, 'equal_cal': {'log_loss': 0.33734220614184746, 'brier': 0.10027882081996026, 'auc': 0.7424242424242424}}
+[22:23:52] elapsed=1.0m ETA=8.5m FIT outer=3/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:23:53] elapsed=1.0m ETA=8.3m FIT outer=3/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:23:53] elapsed=1.0m ETA=8.1m FIT outer=3/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:23:53] elapsed=1.0m ETA=8.0m REFIT outer=3/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:23:54] elapsed=1.0m ETA=7.8m FIT outer=3/20 spline_k2_c0.01 inner=1/3
+[22:23:54] elapsed=1.0m ETA=7.6m FIT outer=3/20 spline_k2_c0.01 inner=2/3
+[22:23:54] elapsed=1.0m ETA=7.4m FIT outer=3/20 spline_k2_c0.01 inner=3/3
+[22:23:54] elapsed=1.0m ETA=7.3m REFIT outer=3/20 spline_k2_c0.01 n=6650 iterations=None
+[22:23:54] elapsed=1.0m ETA=7.1m FIT outer=3/20 lgb_raw_d1_r5 inner=1/3
+[22:23:54] elapsed=1.0m ETA=7.0m FIT outer=3/20 lgb_raw_d1_r5 inner=2/3
+[22:23:55] elapsed=1.0m ETA=6.8m FIT outer=3/20 lgb_raw_d1_r5 inner=3/3
+[22:23:55] elapsed=1.0m ETA=6.7m REFIT outer=3/20 lgb_raw_d1_r5 n=6650 iterations=485
+[22:23:55] elapsed=1.0m ETA=6.5m FIT outer=3/20 cb_raw_d3_r20 inner=1/3
+[22:24:04] elapsed=1.2m ETA=7.3m FIT outer=3/20 cb_raw_d3_r20 inner=2/3
+[22:24:14] elapsed=1.3m ETA=8.3m FIT outer=3/20 cb_raw_d3_r20 inner=3/3
+[22:24:21] elapsed=1.5m ETA=8.9m REFIT outer=3/20 cb_raw_d3_r20 n=6650 iterations=313
+[22:24:25] elapsed=1.5m ETA=9.1m FIT outer=3/20 ebm_bins16 inner=1/3
+[22:24:27] elapsed=1.6m ETA=9.0m FIT outer=3/20 ebm_bins16 inner=2/3
+[22:24:28] elapsed=1.6m ETA=9.0m FIT outer=3/20 ebm_bins16 inner=3/3
+[22:24:30] elapsed=1.6m ETA=9.0m REFIT outer=3/20 ebm_bins16 n=6650 iterations=None
+[22:24:31] elapsed=1.6m ETA=8.9m OUTER 3/20 {'equal': {'log_loss': 0.3489046028973153, 'brier': 0.10249609396719507, 'auc': 0.6965983363042185}, 'equal_cal': {'log_loss': 0.3486478182772062, 'brier': 0.10245162477177483, 'auc': 0.6965983363042185}}
+[22:24:31] elapsed=1.6m ETA=8.9m FIT outer=4/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:24:32] elapsed=1.6m ETA=8.8m FIT outer=4/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:24:32] elapsed=1.6m ETA=8.7m FIT outer=4/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:24:33] elapsed=1.6m ETA=8.5m REFIT outer=4/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:24:33] elapsed=1.7m ETA=8.4m FIT outer=4/20 spline_k2_c0.01 inner=1/3
+[22:24:33] elapsed=1.7m ETA=8.3m FIT outer=4/20 spline_k2_c0.01 inner=2/3
+[22:24:33] elapsed=1.7m ETA=8.1m FIT outer=4/20 spline_k2_c0.01 inner=3/3
+[22:24:34] elapsed=1.7m ETA=8.0m REFIT outer=4/20 spline_k2_c0.01 n=6650 iterations=None
+[22:24:34] elapsed=1.7m ETA=7.8m FIT outer=4/20 lgb_raw_d1_r5 inner=1/3
+[22:24:34] elapsed=1.7m ETA=7.7m FIT outer=4/20 lgb_raw_d1_r5 inner=2/3
+[22:24:34] elapsed=1.7m ETA=7.6m FIT outer=4/20 lgb_raw_d1_r5 inner=3/3
+[22:24:34] elapsed=1.7m ETA=7.5m REFIT outer=4/20 lgb_raw_d1_r5 n=6650 iterations=536
+[22:24:34] elapsed=1.7m ETA=7.4m FIT outer=4/20 cb_raw_d3_r20 inner=1/3
+[22:24:44] elapsed=1.8m ETA=8.0m FIT outer=4/20 cb_raw_d3_r20 inner=2/3
+[22:24:52] elapsed=2.0m ETA=8.4m FIT outer=4/20 cb_raw_d3_r20 inner=3/3
+[22:24:59] elapsed=2.1m ETA=8.7m REFIT outer=4/20 cb_raw_d3_r20 n=6650 iterations=211
+[22:25:01] elapsed=2.1m ETA=8.8m FIT outer=4/20 ebm_bins16 inner=1/3
+[22:25:02] elapsed=2.1m ETA=8.7m FIT outer=4/20 ebm_bins16 inner=2/3
+[22:25:03] elapsed=2.2m ETA=8.6m FIT outer=4/20 ebm_bins16 inner=3/3
+[22:25:04] elapsed=2.2m ETA=8.6m REFIT outer=4/20 ebm_bins16 n=6650 iterations=None
+[22:25:06] elapsed=2.2m ETA=8.5m OUTER 4/20 {'equal': {'log_loss': 0.35421998051097275, 'brier': 0.10277954106279584, 'auc': 0.6553030303030303}, 'equal_cal': {'log_loss': 0.3545557215399882, 'brier': 0.10273958422669521, 'auc': 0.6553030303030303}}
+[22:25:06] elapsed=2.2m ETA=8.5m FIT outer=5/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:25:06] elapsed=2.2m ETA=8.4m FIT outer=5/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:25:06] elapsed=2.2m ETA=8.3m FIT outer=5/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:25:07] elapsed=2.2m ETA=8.2m REFIT outer=5/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:25:07] elapsed=2.2m ETA=8.1m FIT outer=5/20 spline_k2_c0.01 inner=1/3
+[22:25:07] elapsed=2.2m ETA=8.0m FIT outer=5/20 spline_k2_c0.01 inner=2/3
+[22:25:07] elapsed=2.2m ETA=7.9m FIT outer=5/20 spline_k2_c0.01 inner=3/3
+[22:25:08] elapsed=2.2m ETA=7.8m REFIT outer=5/20 spline_k2_c0.01 n=6650 iterations=None
+[22:25:08] elapsed=2.2m ETA=7.6m FIT outer=5/20 lgb_raw_d1_r5 inner=1/3
+[22:25:08] elapsed=2.2m ETA=7.5m FIT outer=5/20 lgb_raw_d1_r5 inner=2/3
+[22:25:08] elapsed=2.2m ETA=7.4m FIT outer=5/20 lgb_raw_d1_r5 inner=3/3
+[22:25:08] elapsed=2.2m ETA=7.3m REFIT outer=5/20 lgb_raw_d1_r5 n=6650 iterations=428
+[22:25:08] elapsed=2.2m ETA=7.2m FIT outer=5/20 cb_raw_d3_r20 inner=1/3
+[22:25:16] elapsed=2.4m ETA=7.5m FIT outer=5/20 cb_raw_d3_r20 inner=2/3
+[22:25:22] elapsed=2.5m ETA=7.8m FIT outer=5/20 cb_raw_d3_r20 inner=3/3
+[22:25:38] elapsed=2.7m ETA=8.5m REFIT outer=5/20 cb_raw_d3_r20 n=6650 iterations=192
+[22:25:40] elapsed=2.8m ETA=8.5m FIT outer=5/20 ebm_bins16 inner=1/3
+[22:25:41] elapsed=2.8m ETA=8.4m FIT outer=5/20 ebm_bins16 inner=2/3
+[22:25:42] elapsed=2.8m ETA=8.4m FIT outer=5/20 ebm_bins16 inner=3/3
+[22:25:43] elapsed=2.8m ETA=8.3m REFIT outer=5/20 ebm_bins16 n=6650 iterations=None
+[22:25:44] elapsed=2.8m ETA=8.3m OUTER 5/20 {'equal': {'log_loss': 0.34402328517747455, 'brier': 0.10060223039845584, 'auc': 0.7023172905525846}, 'equal_cal': {'log_loss': 0.3433272821693428, 'brier': 0.10032781478181099, 'auc': 0.7023172905525846}}
+[22:25:44] elapsed=2.8m ETA=8.3m FIT outer=6/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:25:44] elapsed=2.8m ETA=8.2m FIT outer=6/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:25:45] elapsed=2.8m ETA=8.1m FIT outer=6/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:25:45] elapsed=2.9m ETA=8.0m REFIT outer=6/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:25:45] elapsed=2.9m ETA=7.9m FIT outer=6/20 spline_k2_c0.01 inner=1/3
+[22:25:46] elapsed=2.9m ETA=7.8m FIT outer=6/20 spline_k2_c0.01 inner=2/3
+[22:25:46] elapsed=2.9m ETA=7.7m FIT outer=6/20 spline_k2_c0.01 inner=3/3
+[22:25:46] elapsed=2.9m ETA=7.6m REFIT outer=6/20 spline_k2_c0.01 n=6650 iterations=None
+[22:25:46] elapsed=2.9m ETA=7.5m FIT outer=6/20 lgb_raw_d1_r5 inner=1/3
+[22:25:46] elapsed=2.9m ETA=7.4m FIT outer=6/20 lgb_raw_d1_r5 inner=2/3
+[22:25:46] elapsed=2.9m ETA=7.3m FIT outer=6/20 lgb_raw_d1_r5 inner=3/3
+[22:25:46] elapsed=2.9m ETA=7.2m REFIT outer=6/20 lgb_raw_d1_r5 n=6650 iterations=538
+[22:25:46] elapsed=2.9m ETA=7.2m FIT outer=6/20 cb_raw_d3_r20 inner=1/3
+[22:25:53] elapsed=3.0m ETA=7.3m FIT outer=6/20 cb_raw_d3_r20 inner=2/3
+[22:25:59] elapsed=3.1m ETA=7.5m FIT outer=6/20 cb_raw_d3_r20 inner=3/3
+[22:26:09] elapsed=3.2m ETA=7.8m REFIT outer=6/20 cb_raw_d3_r20 n=6650 iterations=191
+[22:26:10] elapsed=3.3m ETA=7.8m FIT outer=6/20 ebm_bins16 inner=1/3
+[22:26:12] elapsed=3.3m ETA=7.7m FIT outer=6/20 ebm_bins16 inner=2/3
+[22:26:13] elapsed=3.3m ETA=7.7m FIT outer=6/20 ebm_bins16 inner=3/3
+[22:26:14] elapsed=3.3m ETA=7.7m REFIT outer=6/20 ebm_bins16 n=6650 iterations=None
+[22:26:16] elapsed=3.4m ETA=7.6m OUTER 6/20 {'equal': {'log_loss': 0.35268483897797476, 'brier': 0.10316221289697927, 'auc': 0.6854575163398692}, 'equal_cal': {'log_loss': 0.3526759243734451, 'brier': 0.10309400571326177, 'auc': 0.6854575163398692}}
+[22:26:16] elapsed=3.4m ETA=7.6m FIT outer=7/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:26:16] elapsed=3.4m ETA=7.5m FIT outer=7/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:26:17] elapsed=3.4m ETA=7.5m FIT outer=7/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:26:17] elapsed=3.4m ETA=7.4m REFIT outer=7/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:26:18] elapsed=3.4m ETA=7.3m FIT outer=7/20 spline_k2_c0.01 inner=1/3
+[22:26:18] elapsed=3.4m ETA=7.2m FIT outer=7/20 spline_k2_c0.01 inner=2/3
+[22:26:18] elapsed=3.4m ETA=7.2m FIT outer=7/20 spline_k2_c0.01 inner=3/3
+[22:26:18] elapsed=3.4m ETA=7.1m REFIT outer=7/20 spline_k2_c0.01 n=6650 iterations=None
+[22:26:18] elapsed=3.4m ETA=7.0m FIT outer=7/20 lgb_raw_d1_r5 inner=1/3
+[22:26:18] elapsed=3.4m ETA=6.9m FIT outer=7/20 lgb_raw_d1_r5 inner=2/3
+[22:26:18] elapsed=3.4m ETA=6.9m FIT outer=7/20 lgb_raw_d1_r5 inner=3/3
+[22:26:19] elapsed=3.4m ETA=6.8m REFIT outer=7/20 lgb_raw_d1_r5 n=6650 iterations=496
+[22:26:19] elapsed=3.4m ETA=6.7m FIT outer=7/20 cb_raw_d3_r20 inner=1/3
+[22:26:25] elapsed=3.5m ETA=6.8m FIT outer=7/20 cb_raw_d3_r20 inner=2/3
+[22:26:31] elapsed=3.6m ETA=7.0m FIT outer=7/20 cb_raw_d3_r20 inner=3/3
+[22:26:41] elapsed=3.8m ETA=7.2m REFIT outer=7/20 cb_raw_d3_r20 n=6650 iterations=188
+[22:26:43] elapsed=3.8m ETA=7.2m FIT outer=7/20 ebm_bins16 inner=1/3
+[22:26:44] elapsed=3.8m ETA=7.1m FIT outer=7/20 ebm_bins16 inner=2/3
+[22:26:45] elapsed=3.9m ETA=7.1m FIT outer=7/20 ebm_bins16 inner=3/3
+[22:26:46] elapsed=3.9m ETA=7.0m REFIT outer=7/20 ebm_bins16 n=6650 iterations=None
+[22:26:47] elapsed=3.9m ETA=7.0m OUTER 7/20 {'equal': {'log_loss': 0.34928403560774246, 'brier': 0.10321668167733886, 'auc': 0.7051396316102198}, 'equal_cal': {'log_loss': 0.3489701186653487, 'brier': 0.10317077980194957, 'auc': 0.7051396316102198}}
+[22:26:47] elapsed=3.9m ETA=7.0m FIT outer=8/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:26:48] elapsed=3.9m ETA=6.9m FIT outer=8/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:26:48] elapsed=3.9m ETA=6.9m FIT outer=8/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:26:49] elapsed=3.9m ETA=6.8m REFIT outer=8/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:26:49] elapsed=3.9m ETA=6.8m FIT outer=8/20 spline_k2_c0.01 inner=1/3
+[22:26:49] elapsed=3.9m ETA=6.7m FIT outer=8/20 spline_k2_c0.01 inner=2/3
+[22:26:49] elapsed=3.9m ETA=6.6m FIT outer=8/20 spline_k2_c0.01 inner=3/3
+[22:26:49] elapsed=3.9m ETA=6.5m REFIT outer=8/20 spline_k2_c0.01 n=6650 iterations=None
+[22:26:49] elapsed=3.9m ETA=6.5m FIT outer=8/20 lgb_raw_d1_r5 inner=1/3
+[22:26:50] elapsed=3.9m ETA=6.4m FIT outer=8/20 lgb_raw_d1_r5 inner=2/3
+[22:26:50] elapsed=3.9m ETA=6.3m FIT outer=8/20 lgb_raw_d1_r5 inner=3/3
+[22:26:50] elapsed=3.9m ETA=6.3m REFIT outer=8/20 lgb_raw_d1_r5 n=6650 iterations=662
+[22:26:50] elapsed=3.9m ETA=6.2m FIT outer=8/20 cb_raw_d3_r20 inner=1/3
+[22:26:56] elapsed=4.0m ETA=6.3m FIT outer=8/20 cb_raw_d3_r20 inner=2/3
+[22:27:02] elapsed=4.1m ETA=6.4m FIT outer=8/20 cb_raw_d3_r20 inner=3/3
+[22:27:12] elapsed=4.3m ETA=6.6m REFIT outer=8/20 cb_raw_d3_r20 n=6650 iterations=182
+[22:27:14] elapsed=4.3m ETA=6.6m FIT outer=8/20 ebm_bins16 inner=1/3
+[22:27:15] elapsed=4.4m ETA=6.5m FIT outer=8/20 ebm_bins16 inner=2/3
+[22:27:16] elapsed=4.4m ETA=6.5m FIT outer=8/20 ebm_bins16 inner=3/3
+[22:27:17] elapsed=4.4m ETA=6.4m REFIT outer=8/20 ebm_bins16 n=6650 iterations=None
+[22:27:18] elapsed=4.4m ETA=6.4m OUTER 8/20 {'equal': {'log_loss': 0.35358501962479577, 'brier': 0.10223584409432972, 'auc': 0.6548573975044564}, 'equal_cal': {'log_loss': 0.35462413911180674, 'brier': 0.1024092566587571, 'auc': 0.6548573975044564}}
+[22:27:18] elapsed=4.4m ETA=6.4m FIT outer=9/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:27:19] elapsed=4.4m ETA=6.4m FIT outer=9/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:27:19] elapsed=4.4m ETA=6.3m FIT outer=9/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:27:19] elapsed=4.4m ETA=6.2m REFIT outer=9/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:27:20] elapsed=4.4m ETA=6.2m FIT outer=9/20 spline_k2_c0.01 inner=1/3
+[22:27:20] elapsed=4.4m ETA=6.1m FIT outer=9/20 spline_k2_c0.01 inner=2/3
+[22:27:20] elapsed=4.4m ETA=6.1m FIT outer=9/20 spline_k2_c0.01 inner=3/3
+[22:27:20] elapsed=4.4m ETA=6.0m REFIT outer=9/20 spline_k2_c0.01 n=6650 iterations=None
+[22:27:20] elapsed=4.4m ETA=5.9m FIT outer=9/20 lgb_raw_d1_r5 inner=1/3
+[22:27:21] elapsed=4.4m ETA=5.9m FIT outer=9/20 lgb_raw_d1_r5 inner=2/3
+[22:27:21] elapsed=4.5m ETA=5.8m FIT outer=9/20 lgb_raw_d1_r5 inner=3/3
+[22:27:21] elapsed=4.5m ETA=5.8m REFIT outer=9/20 lgb_raw_d1_r5 n=6650 iterations=558
+[22:27:21] elapsed=4.5m ETA=5.7m FIT outer=9/20 cb_raw_d3_r20 inner=1/3
+[22:27:28] elapsed=4.6m ETA=5.8m FIT outer=9/20 cb_raw_d3_r20 inner=2/3
+[22:27:37] elapsed=4.7m ETA=5.9m FIT outer=9/20 cb_raw_d3_r20 inner=3/3
+[22:27:44] elapsed=4.8m ETA=6.0m REFIT outer=9/20 cb_raw_d3_r20 n=6650 iterations=188
+[22:27:46] elapsed=4.9m ETA=6.0m FIT outer=9/20 ebm_bins16 inner=1/3
+[22:27:47] elapsed=4.9m ETA=6.0m FIT outer=9/20 ebm_bins16 inner=2/3
+[22:27:48] elapsed=4.9m ETA=5.9m FIT outer=9/20 ebm_bins16 inner=3/3
+[22:27:49] elapsed=4.9m ETA=5.9m REFIT outer=9/20 ebm_bins16 n=6650 iterations=None
+[22:27:50] elapsed=4.9m ETA=5.9m OUTER 9/20 {'equal': {'log_loss': 0.3540297014954615, 'brier': 0.10341186231358385, 'auc': 0.6732768865121807}, 'equal_cal': {'log_loss': 0.354171825197892, 'brier': 0.10334986714272869, 'auc': 0.6732768865121807}}
+[22:27:50] elapsed=4.9m ETA=5.9m FIT outer=10/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:27:51] elapsed=5.0m ETA=5.8m FIT outer=10/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:27:51] elapsed=5.0m ETA=5.8m FIT outer=10/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:27:51] elapsed=5.0m ETA=5.7m REFIT outer=10/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:27:52] elapsed=5.0m ETA=5.7m FIT outer=10/20 spline_k2_c0.01 inner=1/3
+[22:27:52] elapsed=5.0m ETA=5.6m FIT outer=10/20 spline_k2_c0.01 inner=2/3
+[22:27:52] elapsed=5.0m ETA=5.5m FIT outer=10/20 spline_k2_c0.01 inner=3/3
+[22:27:52] elapsed=5.0m ETA=5.5m REFIT outer=10/20 spline_k2_c0.01 n=6650 iterations=None
+[22:27:52] elapsed=5.0m ETA=5.4m FIT outer=10/20 lgb_raw_d1_r5 inner=1/3
+[22:27:52] elapsed=5.0m ETA=5.4m FIT outer=10/20 lgb_raw_d1_r5 inner=2/3
+[22:27:53] elapsed=5.0m ETA=5.3m FIT outer=10/20 lgb_raw_d1_r5 inner=3/3
+[22:27:53] elapsed=5.0m ETA=5.3m REFIT outer=10/20 lgb_raw_d1_r5 n=6650 iterations=460
+[22:27:53] elapsed=5.0m ETA=5.2m FIT outer=10/20 cb_raw_d3_r20 inner=1/3
+[22:27:59] elapsed=5.1m ETA=5.3m FIT outer=10/20 cb_raw_d3_r20 inner=2/3
+[22:28:08] elapsed=5.2m ETA=5.4m FIT outer=10/20 cb_raw_d3_r20 inner=3/3
+[22:28:16] elapsed=5.4m ETA=5.5m REFIT outer=10/20 cb_raw_d3_r20 n=6650 iterations=197
+[22:28:17] elapsed=5.4m ETA=5.4m FIT outer=10/20 ebm_bins16 inner=1/3
+[22:28:19] elapsed=5.4m ETA=5.4m FIT outer=10/20 ebm_bins16 inner=2/3
+[22:28:20] elapsed=5.4m ETA=5.4m FIT outer=10/20 ebm_bins16 inner=3/3
+[22:28:21] elapsed=5.5m ETA=5.3m REFIT outer=10/20 ebm_bins16 n=6650 iterations=None
+[22:28:22] elapsed=5.5m ETA=5.3m OUTER 10/20 {'equal': {'log_loss': 0.35749380484676535, 'brier': 0.10386126972178514, 'auc': 0.6700831847890671}, 'equal_cal': {'log_loss': 0.35795812646108, 'brier': 0.10389781820212093, 'auc': 0.6700831847890671}}
+[22:28:22] elapsed=5.5m ETA=5.3m FIT outer=11/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:28:23] elapsed=5.5m ETA=5.3m FIT outer=11/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:28:23] elapsed=5.5m ETA=5.2m FIT outer=11/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:28:24] elapsed=5.5m ETA=5.2m REFIT outer=11/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:28:24] elapsed=5.5m ETA=5.1m FIT outer=11/20 spline_k2_c0.01 inner=1/3
+[22:28:24] elapsed=5.5m ETA=5.1m FIT outer=11/20 spline_k2_c0.01 inner=2/3
+[22:28:25] elapsed=5.5m ETA=5.0m FIT outer=11/20 spline_k2_c0.01 inner=3/3
+[22:28:25] elapsed=5.5m ETA=5.0m REFIT outer=11/20 spline_k2_c0.01 n=6650 iterations=None
+[22:28:25] elapsed=5.5m ETA=4.9m FIT outer=11/20 lgb_raw_d1_r5 inner=1/3
+[22:28:25] elapsed=5.5m ETA=4.9m FIT outer=11/20 lgb_raw_d1_r5 inner=2/3
+[22:28:25] elapsed=5.5m ETA=4.8m FIT outer=11/20 lgb_raw_d1_r5 inner=3/3
+[22:28:25] elapsed=5.5m ETA=4.8m REFIT outer=11/20 lgb_raw_d1_r5 n=6650 iterations=529
+[22:28:25] elapsed=5.5m ETA=4.7m FIT outer=11/20 cb_raw_d3_r20 inner=1/3
+[22:28:34] elapsed=5.7m ETA=4.8m FIT outer=11/20 cb_raw_d3_r20 inner=2/3
+[22:28:42] elapsed=5.8m ETA=4.9m FIT outer=11/20 cb_raw_d3_r20 inner=3/3
+[22:28:50] elapsed=5.9m ETA=4.9m REFIT outer=11/20 cb_raw_d3_r20 n=6650 iterations=234
+[22:28:53] elapsed=6.0m ETA=4.9m FIT outer=11/20 ebm_bins16 inner=1/3
+[22:28:54] elapsed=6.0m ETA=4.9m FIT outer=11/20 ebm_bins16 inner=2/3
+[22:28:55] elapsed=6.0m ETA=4.9m FIT outer=11/20 ebm_bins16 inner=3/3
+[22:28:56] elapsed=6.0m ETA=4.8m REFIT outer=11/20 ebm_bins16 n=6650 iterations=None
+[22:28:57] elapsed=6.1m ETA=4.8m OUTER 11/20 {'equal': {'log_loss': 0.34420618338021136, 'brier': 0.10134811592834518, 'auc': 0.7103386809269162}, 'equal_cal': {'log_loss': 0.343604417200511, 'brier': 0.1011302732121624, 'auc': 0.7103386809269162}}
+[22:28:57] elapsed=6.1m ETA=4.8m FIT outer=12/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:28:57] elapsed=6.1m ETA=4.8m FIT outer=12/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:28:58] elapsed=6.1m ETA=4.7m FIT outer=12/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:28:58] elapsed=6.1m ETA=4.7m REFIT outer=12/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:28:59] elapsed=6.1m ETA=4.6m FIT outer=12/20 spline_k2_c0.01 inner=1/3
+[22:28:59] elapsed=6.1m ETA=4.6m FIT outer=12/20 spline_k2_c0.01 inner=2/3
+[22:28:59] elapsed=6.1m ETA=4.5m FIT outer=12/20 spline_k2_c0.01 inner=3/3
+[22:28:59] elapsed=6.1m ETA=4.5m REFIT outer=12/20 spline_k2_c0.01 n=6650 iterations=None
+[22:28:59] elapsed=6.1m ETA=4.4m FIT outer=12/20 lgb_raw_d1_r5 inner=1/3
+[22:28:59] elapsed=6.1m ETA=4.4m FIT outer=12/20 lgb_raw_d1_r5 inner=2/3
+[22:28:59] elapsed=6.1m ETA=4.4m FIT outer=12/20 lgb_raw_d1_r5 inner=3/3
+[22:29:00] elapsed=6.1m ETA=4.3m REFIT outer=12/20 lgb_raw_d1_r5 n=6650 iterations=484
+[22:29:00] elapsed=6.1m ETA=4.3m FIT outer=12/20 cb_raw_d3_r20 inner=1/3
+[22:29:09] elapsed=6.3m ETA=4.3m FIT outer=12/20 cb_raw_d3_r20 inner=2/3
+[22:29:13] elapsed=6.3m ETA=4.3m FIT outer=12/20 cb_raw_d3_r20 inner=3/3
+[22:29:22] elapsed=6.5m ETA=4.4m REFIT outer=12/20 cb_raw_d3_r20 n=6650 iterations=259
+[22:29:25] elapsed=6.5m ETA=4.4m FIT outer=12/20 ebm_bins16 inner=1/3
+[22:29:26] elapsed=6.5m ETA=4.4m FIT outer=12/20 ebm_bins16 inner=2/3
+[22:29:27] elapsed=6.6m ETA=4.3m FIT outer=12/20 ebm_bins16 inner=3/3
+[22:29:28] elapsed=6.6m ETA=4.3m REFIT outer=12/20 ebm_bins16 n=6650 iterations=None
+[22:29:30] elapsed=6.6m ETA=4.3m OUTER 12/20 {'equal': {'log_loss': 0.34796391213221534, 'brier': 0.1030906678115222, 'auc': 0.7078134284016637}, 'equal_cal': {'log_loss': 0.34867536476064825, 'brier': 0.1036662213982586, 'auc': 0.7078134284016637}}
+[22:29:30] elapsed=6.6m ETA=4.3m FIT outer=13/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:29:30] elapsed=6.6m ETA=4.2m FIT outer=13/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:29:31] elapsed=6.6m ETA=4.2m FIT outer=13/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:29:32] elapsed=6.6m ETA=4.1m REFIT outer=13/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:29:32] elapsed=6.6m ETA=4.1m FIT outer=13/20 spline_k2_c0.01 inner=1/3
+[22:29:32] elapsed=6.6m ETA=4.1m FIT outer=13/20 spline_k2_c0.01 inner=2/3
+[22:29:32] elapsed=6.6m ETA=4.0m FIT outer=13/20 spline_k2_c0.01 inner=3/3
+[22:29:32] elapsed=6.6m ETA=4.0m REFIT outer=13/20 spline_k2_c0.01 n=6650 iterations=None
+[22:29:32] elapsed=6.6m ETA=3.9m FIT outer=13/20 lgb_raw_d1_r5 inner=1/3
+[22:29:32] elapsed=6.6m ETA=3.9m FIT outer=13/20 lgb_raw_d1_r5 inner=2/3
+[22:29:33] elapsed=6.6m ETA=3.9m FIT outer=13/20 lgb_raw_d1_r5 inner=3/3
+[22:29:33] elapsed=6.7m ETA=3.8m REFIT outer=13/20 lgb_raw_d1_r5 n=6650 iterations=609
+[22:29:33] elapsed=6.7m ETA=3.8m FIT outer=13/20 cb_raw_d3_r20 inner=1/3
+[22:29:42] elapsed=6.8m ETA=3.8m FIT outer=13/20 cb_raw_d3_r20 inner=2/3
+[22:29:49] elapsed=6.9m ETA=3.9m FIT outer=13/20 cb_raw_d3_r20 inner=3/3
+[22:30:01] elapsed=7.1m ETA=3.9m REFIT outer=13/20 cb_raw_d3_r20 n=6650 iterations=253
+[22:30:04] elapsed=7.2m ETA=3.9m FIT outer=13/20 ebm_bins16 inner=1/3
+[22:30:05] elapsed=7.2m ETA=3.9m FIT outer=13/20 ebm_bins16 inner=2/3
+[22:30:06] elapsed=7.2m ETA=3.8m FIT outer=13/20 ebm_bins16 inner=3/3
+[22:30:08] elapsed=7.2m ETA=3.8m REFIT outer=13/20 ebm_bins16 n=6650 iterations=None
+[22:30:09] elapsed=7.3m ETA=3.8m OUTER 13/20 {'equal': {'log_loss': 0.35208441031611903, 'brier': 0.10251699834746422, 'auc': 0.6802584670231728}, 'equal_cal': {'log_loss': 0.3525840939267377, 'brier': 0.10259676626028968, 'auc': 0.6802584670231728}}
+[22:30:09] elapsed=7.3m ETA=3.8m FIT outer=14/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:30:09] elapsed=7.3m ETA=3.7m FIT outer=14/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:30:11] elapsed=7.3m ETA=3.7m FIT outer=14/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:30:11] elapsed=7.3m ETA=3.7m REFIT outer=14/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:30:11] elapsed=7.3m ETA=3.6m FIT outer=14/20 spline_k2_c0.01 inner=1/3
+[22:30:12] elapsed=7.3m ETA=3.6m FIT outer=14/20 spline_k2_c0.01 inner=2/3
+[22:30:12] elapsed=7.3m ETA=3.6m FIT outer=14/20 spline_k2_c0.01 inner=3/3
+[22:30:12] elapsed=7.3m ETA=3.5m REFIT outer=14/20 spline_k2_c0.01 n=6650 iterations=None
+[22:30:12] elapsed=7.3m ETA=3.5m FIT outer=14/20 lgb_raw_d1_r5 inner=1/3
+[22:30:12] elapsed=7.3m ETA=3.4m FIT outer=14/20 lgb_raw_d1_r5 inner=2/3
+[22:30:12] elapsed=7.3m ETA=3.4m FIT outer=14/20 lgb_raw_d1_r5 inner=3/3
+[22:30:12] elapsed=7.3m ETA=3.4m REFIT outer=14/20 lgb_raw_d1_r5 n=6650 iterations=480
+[22:30:12] elapsed=7.3m ETA=3.3m FIT outer=14/20 cb_raw_d3_r20 inner=1/3
+[22:30:25] elapsed=7.5m ETA=3.4m FIT outer=14/20 cb_raw_d3_r20 inner=2/3
+[22:30:33] elapsed=7.7m ETA=3.4m FIT outer=14/20 cb_raw_d3_r20 inner=3/3
+[22:30:42] elapsed=7.8m ETA=3.4m REFIT outer=14/20 cb_raw_d3_r20 n=6650 iterations=292
+[22:30:45] elapsed=7.9m ETA=3.4m FIT outer=14/20 ebm_bins16 inner=1/3
+[22:30:46] elapsed=7.9m ETA=3.4m FIT outer=14/20 ebm_bins16 inner=2/3
+[22:30:48] elapsed=7.9m ETA=3.4m FIT outer=14/20 ebm_bins16 inner=3/3
+[22:30:49] elapsed=7.9m ETA=3.3m REFIT outer=14/20 ebm_bins16 n=6650 iterations=None
+[22:30:50] elapsed=7.9m ETA=3.3m OUTER 14/20 {'equal': {'log_loss': 0.34479711813663033, 'brier': 0.10052475614620125, 'auc': 0.7048425430778371}, 'equal_cal': {'log_loss': 0.34407860170735877, 'brier': 0.1001572514339821, 'auc': 0.7048425430778371}}
+[22:30:50] elapsed=7.9m ETA=3.3m FIT outer=15/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:30:51] elapsed=8.0m ETA=3.3m FIT outer=15/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:30:52] elapsed=8.0m ETA=3.2m FIT outer=15/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:30:52] elapsed=8.0m ETA=3.2m REFIT outer=15/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:30:52] elapsed=8.0m ETA=3.2m FIT outer=15/20 spline_k2_c0.01 inner=1/3
+[22:30:53] elapsed=8.0m ETA=3.1m FIT outer=15/20 spline_k2_c0.01 inner=2/3
+[22:30:53] elapsed=8.0m ETA=3.1m FIT outer=15/20 spline_k2_c0.01 inner=3/3
+[22:30:53] elapsed=8.0m ETA=3.0m REFIT outer=15/20 spline_k2_c0.01 n=6650 iterations=None
+[22:30:53] elapsed=8.0m ETA=3.0m FIT outer=15/20 lgb_raw_d1_r5 inner=1/3
+[22:30:53] elapsed=8.0m ETA=3.0m FIT outer=15/20 lgb_raw_d1_r5 inner=2/3
+[22:30:53] elapsed=8.0m ETA=2.9m FIT outer=15/20 lgb_raw_d1_r5 inner=3/3
+[22:30:53] elapsed=8.0m ETA=2.9m REFIT outer=15/20 lgb_raw_d1_r5 n=6650 iterations=550
+[22:30:54] elapsed=8.0m ETA=2.9m FIT outer=15/20 cb_raw_d3_r20 inner=1/3
+[22:31:02] elapsed=8.1m ETA=2.9m FIT outer=15/20 cb_raw_d3_r20 inner=2/3
+[22:31:10] elapsed=8.3m ETA=2.9m FIT outer=15/20 cb_raw_d3_r20 inner=3/3
+[22:31:18] elapsed=8.4m ETA=2.9m REFIT outer=15/20 cb_raw_d3_r20 n=6650 iterations=225
+[22:31:21] elapsed=8.5m ETA=2.9m FIT outer=15/20 ebm_bins16 inner=1/3
+[22:31:22] elapsed=8.5m ETA=2.9m FIT outer=15/20 ebm_bins16 inner=2/3
+[22:31:24] elapsed=8.5m ETA=2.8m FIT outer=15/20 ebm_bins16 inner=3/3
+[22:31:25] elapsed=8.5m ETA=2.8m REFIT outer=15/20 ebm_bins16 n=6650 iterations=None
+[22:31:26] elapsed=8.5m ETA=2.8m OUTER 15/20 {'equal': {'log_loss': 0.3475894593785998, 'brier': 0.10100070660019866, 'auc': 0.6832293523469993}, 'equal_cal': {'log_loss': 0.3473103463587351, 'brier': 0.10068425328733013, 'auc': 0.6832293523469993}}
+[22:31:26] elapsed=8.5m ETA=2.8m FIT outer=16/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:31:26] elapsed=8.5m ETA=2.7m FIT outer=16/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:31:27] elapsed=8.6m ETA=2.7m FIT outer=16/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:31:28] elapsed=8.6m ETA=2.7m REFIT outer=16/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:31:28] elapsed=8.6m ETA=2.6m FIT outer=16/20 spline_k2_c0.01 inner=1/3
+[22:31:28] elapsed=8.6m ETA=2.6m FIT outer=16/20 spline_k2_c0.01 inner=2/3
+[22:31:28] elapsed=8.6m ETA=2.6m FIT outer=16/20 spline_k2_c0.01 inner=3/3
+[22:31:29] elapsed=8.6m ETA=2.5m REFIT outer=16/20 spline_k2_c0.01 n=6650 iterations=None
+[22:31:29] elapsed=8.6m ETA=2.5m FIT outer=16/20 lgb_raw_d1_r5 inner=1/3
+[22:31:29] elapsed=8.6m ETA=2.5m FIT outer=16/20 lgb_raw_d1_r5 inner=2/3
+[22:31:29] elapsed=8.6m ETA=2.4m FIT outer=16/20 lgb_raw_d1_r5 inner=3/3
+[22:31:29] elapsed=8.6m ETA=2.4m REFIT outer=16/20 lgb_raw_d1_r5 n=6650 iterations=480
+[22:31:29] elapsed=8.6m ETA=2.3m FIT outer=16/20 cb_raw_d3_r20 inner=1/3
+[22:31:37] elapsed=8.7m ETA=2.4m FIT outer=16/20 cb_raw_d3_r20 inner=2/3
+[22:31:45] elapsed=8.8m ETA=2.4m FIT outer=16/20 cb_raw_d3_r20 inner=3/3
+[22:31:55] elapsed=9.0m ETA=2.4m REFIT outer=16/20 cb_raw_d3_r20 n=6650 iterations=249
+[22:31:58] elapsed=9.1m ETA=2.3m FIT outer=16/20 ebm_bins16 inner=1/3
+[22:31:59] elapsed=9.1m ETA=2.3m FIT outer=16/20 ebm_bins16 inner=2/3
+[22:32:00] elapsed=9.1m ETA=2.3m FIT outer=16/20 ebm_bins16 inner=3/3
+[22:32:01] elapsed=9.1m ETA=2.2m REFIT outer=16/20 ebm_bins16 n=6650 iterations=None
+[22:32:03] elapsed=9.1m ETA=2.2m OUTER 16/20 {'equal': {'log_loss': 0.3528746971202014, 'brier': 0.10414646209316562, 'auc': 0.6997920380273321}, 'equal_cal': {'log_loss': 0.3529383417167769, 'brier': 0.10421008922460065, 'auc': 0.6997920380273321}}
+[22:32:03] elapsed=9.1m ETA=2.2m FIT outer=17/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:32:03] elapsed=9.2m ETA=2.2m FIT outer=17/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:32:03] elapsed=9.2m ETA=2.2m FIT outer=17/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:32:03] elapsed=9.2m ETA=2.1m REFIT outer=17/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:32:04] elapsed=9.2m ETA=2.1m FIT outer=17/20 spline_k2_c0.01 inner=1/3
+[22:32:04] elapsed=9.2m ETA=2.1m FIT outer=17/20 spline_k2_c0.01 inner=2/3
+[22:32:04] elapsed=9.2m ETA=2.0m FIT outer=17/20 spline_k2_c0.01 inner=3/3
+[22:32:04] elapsed=9.2m ETA=2.0m REFIT outer=17/20 spline_k2_c0.01 n=6650 iterations=None
+[22:32:04] elapsed=9.2m ETA=2.0m FIT outer=17/20 lgb_raw_d1_r5 inner=1/3
+[22:32:05] elapsed=9.2m ETA=1.9m FIT outer=17/20 lgb_raw_d1_r5 inner=2/3
+[22:32:05] elapsed=9.2m ETA=1.9m FIT outer=17/20 lgb_raw_d1_r5 inner=3/3
+[22:32:05] elapsed=9.2m ETA=1.9m REFIT outer=17/20 lgb_raw_d1_r5 n=6650 iterations=620
+[22:32:05] elapsed=9.2m ETA=1.8m FIT outer=17/20 cb_raw_d3_r20 inner=1/3
+[22:32:14] elapsed=9.3m ETA=1.8m FIT outer=17/20 cb_raw_d3_r20 inner=2/3
+[22:32:23] elapsed=9.5m ETA=1.8m FIT outer=17/20 cb_raw_d3_r20 inner=3/3
+[22:32:32] elapsed=9.6m ETA=1.8m REFIT outer=17/20 cb_raw_d3_r20 n=6650 iterations=278
+[22:32:35] elapsed=9.7m ETA=1.8m FIT outer=17/20 ebm_bins16 inner=1/3
+[22:32:37] elapsed=9.7m ETA=1.8m FIT outer=17/20 ebm_bins16 inner=2/3
+[22:32:38] elapsed=9.7m ETA=1.7m FIT outer=17/20 ebm_bins16 inner=3/3
+[22:32:39] elapsed=9.8m ETA=1.7m REFIT outer=17/20 ebm_bins16 n=6650 iterations=None
+[22:32:41] elapsed=9.8m ETA=1.7m OUTER 17/20 {'equal': {'log_loss': 0.3522768663996763, 'brier': 0.1023961734250503, 'auc': 0.6894682115270351}, 'equal_cal': {'log_loss': 0.3522723417581696, 'brier': 0.10231856666065886, 'auc': 0.6894682115270351}}
+[22:32:41] elapsed=9.8m ETA=1.7m FIT outer=18/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:32:41] elapsed=9.8m ETA=1.6m FIT outer=18/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:32:42] elapsed=9.8m ETA=1.6m FIT outer=18/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:32:42] elapsed=9.8m ETA=1.6m REFIT outer=18/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:32:43] elapsed=9.8m ETA=1.6m FIT outer=18/20 spline_k2_c0.01 inner=1/3
+[22:32:43] elapsed=9.8m ETA=1.5m FIT outer=18/20 spline_k2_c0.01 inner=2/3
+[22:32:43] elapsed=9.8m ETA=1.5m FIT outer=18/20 spline_k2_c0.01 inner=3/3
+[22:32:43] elapsed=9.8m ETA=1.5m REFIT outer=18/20 spline_k2_c0.01 n=6650 iterations=None
+[22:32:43] elapsed=9.8m ETA=1.4m FIT outer=18/20 lgb_raw_d1_r5 inner=1/3
+[22:32:43] elapsed=9.8m ETA=1.4m FIT outer=18/20 lgb_raw_d1_r5 inner=2/3
+[22:32:43] elapsed=9.8m ETA=1.4m FIT outer=18/20 lgb_raw_d1_r5 inner=3/3
+[22:32:44] elapsed=9.8m ETA=1.3m REFIT outer=18/20 lgb_raw_d1_r5 n=6650 iterations=609
+[22:32:44] elapsed=9.8m ETA=1.3m FIT outer=18/20 cb_raw_d3_r20 inner=1/3
+[22:32:53] elapsed=10.0m ETA=1.3m FIT outer=18/20 cb_raw_d3_r20 inner=2/3
+[22:33:02] elapsed=10.1m ETA=1.3m FIT outer=18/20 cb_raw_d3_r20 inner=3/3
+[22:33:09] elapsed=10.3m ETA=1.3m REFIT outer=18/20 cb_raw_d3_r20 n=6650 iterations=246
+[22:33:12] elapsed=10.3m ETA=1.2m FIT outer=18/20 ebm_bins16 inner=1/3
+[22:33:13] elapsed=10.3m ETA=1.2m FIT outer=18/20 ebm_bins16 inner=2/3
+[22:33:14] elapsed=10.3m ETA=1.2m FIT outer=18/20 ebm_bins16 inner=3/3
+[22:33:15] elapsed=10.4m ETA=1.1m REFIT outer=18/20 ebm_bins16 n=6650 iterations=None
+[22:33:17] elapsed=10.4m ETA=1.1m OUTER 18/20 {'equal': {'log_loss': 0.3783793498707595, 'brier': 0.10996567562921226, 'auc': 0.5842988710635769}, 'equal_cal': {'log_loss': 0.38131990104166213, 'brier': 0.1108116851298543, 'auc': 0.5842988710635769}}
+[22:33:17] elapsed=10.4m ETA=1.1m FIT outer=19/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:33:17] elapsed=10.4m ETA=1.1m FIT outer=19/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:33:18] elapsed=10.4m ETA=1.1m FIT outer=19/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:33:18] elapsed=10.4m ETA=1.0m REFIT outer=19/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:33:18] elapsed=10.4m ETA=1.0m FIT outer=19/20 spline_k2_c0.01 inner=1/3
+[22:33:18] elapsed=10.4m ETA=1.0m FIT outer=19/20 spline_k2_c0.01 inner=2/3
+[22:33:19] elapsed=10.4m ETA=0.9m FIT outer=19/20 spline_k2_c0.01 inner=3/3
+[22:33:19] elapsed=10.4m ETA=0.9m REFIT outer=19/20 spline_k2_c0.01 n=6650 iterations=None
+[22:33:19] elapsed=10.4m ETA=0.9m FIT outer=19/20 lgb_raw_d1_r5 inner=1/3
+[22:33:19] elapsed=10.4m ETA=0.8m FIT outer=19/20 lgb_raw_d1_r5 inner=2/3
+[22:33:19] elapsed=10.4m ETA=0.8m FIT outer=19/20 lgb_raw_d1_r5 inner=3/3
+[22:33:19] elapsed=10.4m ETA=0.8m REFIT outer=19/20 lgb_raw_d1_r5 n=6650 iterations=612
+[22:33:19] elapsed=10.4m ETA=0.8m FIT outer=19/20 cb_raw_d3_r20 inner=1/3
+[22:33:27] elapsed=10.6m ETA=0.7m FIT outer=19/20 cb_raw_d3_r20 inner=2/3
+[22:33:37] elapsed=10.7m ETA=0.7m FIT outer=19/20 cb_raw_d3_r20 inner=3/3
+[22:33:52] elapsed=11.0m ETA=0.7m REFIT outer=19/20 cb_raw_d3_r20 n=6650 iterations=301
+[22:33:55] elapsed=11.0m ETA=0.7m FIT outer=19/20 ebm_bins16 inner=1/3
+[22:33:56] elapsed=11.0m ETA=0.7m FIT outer=19/20 ebm_bins16 inner=2/3
+[22:33:57] elapsed=11.1m ETA=0.6m FIT outer=19/20 ebm_bins16 inner=3/3
+[22:33:59] elapsed=11.1m ETA=0.6m REFIT outer=19/20 ebm_bins16 n=6650 iterations=None
+[22:34:00] elapsed=11.1m ETA=0.6m OUTER 19/20 {'equal': {'log_loss': 0.3484362611077382, 'brier': 0.10177800618080697, 'auc': 0.6925133689839572}, 'equal_cal': {'log_loss': 0.34822536168790447, 'brier': 0.10158142300256244, 'auc': 0.6925133689839572}}
+[22:34:00] elapsed=11.1m ETA=0.6m FIT outer=20/20 lr_engineered_c0.1_l0.8 inner=1/3
+[22:34:00] elapsed=11.1m ETA=0.5m FIT outer=20/20 lr_engineered_c0.1_l0.8 inner=2/3
+[22:34:01] elapsed=11.1m ETA=0.5m FIT outer=20/20 lr_engineered_c0.1_l0.8 inner=3/3
+[22:34:01] elapsed=11.1m ETA=0.5m REFIT outer=20/20 lr_engineered_c0.1_l0.8 n=6650 iterations=None
+[22:34:02] elapsed=11.1m ETA=0.5m FIT outer=20/20 spline_k2_c0.01 inner=1/3
+[22:34:02] elapsed=11.1m ETA=0.4m FIT outer=20/20 spline_k2_c0.01 inner=2/3
+[22:34:02] elapsed=11.1m ETA=0.4m FIT outer=20/20 spline_k2_c0.01 inner=3/3
+[22:34:02] elapsed=11.1m ETA=0.4m REFIT outer=20/20 spline_k2_c0.01 n=6650 iterations=None
+[22:34:02] elapsed=11.1m ETA=0.3m FIT outer=20/20 lgb_raw_d1_r5 inner=1/3
+[22:34:02] elapsed=11.1m ETA=0.3m FIT outer=20/20 lgb_raw_d1_r5 inner=2/3
+[22:34:02] elapsed=11.1m ETA=0.3m FIT outer=20/20 lgb_raw_d1_r5 inner=3/3
+[22:34:03] elapsed=11.1m ETA=0.2m REFIT outer=20/20 lgb_raw_d1_r5 n=6650 iterations=581
+[22:34:03] elapsed=11.1m ETA=0.2m FIT outer=20/20 cb_raw_d3_r20 inner=1/3
+[22:34:12] elapsed=11.3m ETA=0.2m FIT outer=20/20 cb_raw_d3_r20 inner=2/3
+[22:34:20] elapsed=11.4m ETA=0.2m FIT outer=20/20 cb_raw_d3_r20 inner=3/3
+[22:34:28] elapsed=11.6m ETA=0.1m REFIT outer=20/20 cb_raw_d3_r20 n=6650 iterations=217
+[22:34:30] elapsed=11.6m ETA=0.1m FIT outer=20/20 ebm_bins16 inner=1/3
+[22:34:32] elapsed=11.6m ETA=0.1m FIT outer=20/20 ebm_bins16 inner=2/3
+[22:34:33] elapsed=11.6m ETA=0.1m FIT outer=20/20 ebm_bins16 inner=3/3
+[22:34:34] elapsed=11.7m ETA=0.0m REFIT outer=20/20 ebm_bins16 n=6650 iterations=None
+[22:34:36] elapsed=11.7m ETA=0.0m OUTER 20/20 {'equal': {'log_loss': 0.3144472102785372, 'brier': 0.09301081047020103, 'auc': 0.8212750455373407}, 'equal_cal': {'log_loss': 0.31074309004891476, 'brier': 0.09181217890332477, 'auc': 0.8212750455373407}}
+[22:34:37] elapsed=11.7m ETA=0.0m COMPLETE {'equal': {'log_loss': 0.3488811814345274, 'brier': 0.10215331660272951, 'auc': 0.6937178053360525}, 'equal_cal': {'log_loss': 0.34877876067389063, 'brier': 0.10208469336389953, 'auc': 0.6936623408712447}}

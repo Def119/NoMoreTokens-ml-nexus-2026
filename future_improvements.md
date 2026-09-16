@@ -1,5 +1,7 @@
 # Future Improvements & Strategic Roadmap: Path to #1 on Kaggle
 
+> Historical roadmap. Its claims of "zero overfitting risk," guaranteed benefits from seed averaging, and underconfidence inferred from the CV-to-leaderboard gap are not established. The new `nexus` workflow tests those assumptions using nested validation, corrected preprocessing, and fresh model comparisons. Current outputs and evidence are stored under `runs/` and explained in `README.md`.
+
 This document outlines the prioritized improvements for the 30-day hospital readmission prediction pipeline, specifically aligned with the **Binary Log Loss competition metric** and the **Trust Card requirements** from `consideration.md`.
 
 ---
